@@ -18,6 +18,11 @@ fn main() {
     let e: bool = true; // 불리언
     let f: char = 'R'; // 문자
     let g: &str = "Hello, Rust"; // 문자열
+    let h: String = String::from("Hello, Rust");// 문자열
+    let i: u8 = 255;// 8비트 부호없는 정수
+    let j: u16 = 65535; // 16비트 부호없는 정수
+    let k: u32 = 4294967295; // 32비트 부호없는 정수
+    let l: u64 = 18446744073709551615; // 64비트 부호없는 정수
 
     println!("a: {}", g);
     println!("{}", transTemp(27));
