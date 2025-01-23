@@ -49,13 +49,21 @@ enum Message {
 
 impl Message{
     fn call(&self){
-        match self{
+        match self{ //match는 열거형의 값을 확인하고 해당 값에 대한 처리를 수행하는 구문
+                    //switch와 유사. Message::Quit 값을 가진 인스턴스를 통해 call 메서드 호출 시 Quit을 출력.
             Message::Quit => println!("Quit"),
             Message::Move{x,y} => println!("Move to ({},{})",x,y),
             Message::Write(text) => println!("Write: {}",text),
             Message::ChangeColor(r,g,b) => println!("Change color to ({},{},{})",r,g,b),
         }
     }
+}
+
+//제네릭
+fn print_value<T>(value:T) -> T{//제네릭<>은 안에 들어오는 변수의 타입을 저장함.
+    //이게 기깔 나는게 뭐냐.. 만약 제네릭이 없으면 같은 방식의 동작을 하는 함수지만 타입이 다르면 각각 구현해 줘야함.
+    //하지만 제네릭을 사용하면 변수의 타입을 정하 않고 들어오는 변수의 타입 그대로 사용가능.
+    return value;
 }
 
 
@@ -69,6 +77,9 @@ fn main() {
     println!("{}", div(x,y));
     println!("{}", moddd(x,y));
 
+
+
+
     //조건문
     let number = 20;
     if number > 5 {
@@ -80,6 +91,9 @@ fn main() {
     else{
         println!("number is less than 5");
     }
+
+
+
 
     //반복문
     let numbers: [i32; 5] = [1,2,3,4,5];
@@ -106,6 +120,9 @@ fn main() {
     for number in 1..=10 {
         println!("number is {}",number);
     }
+
+
+
 
     //소유권
     let s1 = String::from("hello");
@@ -156,10 +173,12 @@ fn main() {
     println!("rect2 area is {}",rect2.area());
 
 
+
+
     //열거형 구조체
     let mut m = Message::Move{x:10,y:30};
     m = Message::Quit;
-    
+
     m.call();
 
 }

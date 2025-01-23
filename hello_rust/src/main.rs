@@ -17,8 +17,8 @@ fn main() {
     let d: f64 = 3.141592653589793; // 64비트 실수
     let e: bool = true; // 불리언
     let f: char = 'R'; // 문자
-    let g: &str = "Hello, Rust"; // 문자열
-    let h: String = String::from("Hello, Rust");// 문자열
+    let g: &str = "Hello, Rust"; // 문자열 
+    let h: String = String::from("Hello, Rust");// 문자열 &str형 문자열은 가변 불가, 참조형 문자열임. 하지만 String형은 가변 가능.
     let i: u8 = 255;// 8비트 부호없는 정수
     let j: u16 = 65535; // 16비트 부호없는 정수
     let k: u32 = 4294967295; // 32비트 부호없는 정수
