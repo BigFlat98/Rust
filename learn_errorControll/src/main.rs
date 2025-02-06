@@ -1,6 +1,6 @@
-use std::fs::File;
-use std::io;
-use std::io::Read;
+use std::fs::File; //파일 관련 기능 제공
+use std::io; //입출력 관련 기능 제공
+use std::io::Read; //파일 읽기 관련 기능 제공
 
 
 fn main() {
@@ -75,4 +75,16 @@ fn main() {
         file.read_to_string(&mut contents)?; //성공시 contents에 파일 내용 저장, 실패시 즉시 함수 종료
         Ok(contents)
     }
+
+
+    //panic! 사용
+    let v = vec![1,2,3];
+    //v[10]; 패닉 발생. 패닉은 치명적인 오류가 발생했을 때 프로그램음 안정적으로 종료하는 기능.
+    //코딩하는 과정에서 특정 상황에서 문제가 발생했을 때 해당 상황에서 더이상 실행되지 않아야 하는 경우 발생시킴 panic!("메세지"); 로 실행할 수 있음.
+
+
+    //에러전파
+    //함수 내에서 발행한 에러를 직접 처리하지 않고, 호출한 쪽으로 전달하는 기법. 주로 result타입과 ?연산자를 사용해 에러를 전파함
+    //위쪽에서 함.
+
 }
